@@ -1,6 +1,14 @@
 #include "Vector.h"
 #include <stdlib.h>
 
+Vector init(int l)
+{
+	Vector r;
+	r.length = l;
+	r.x = (float*)malloc(sizeof(float)*(r.length));
+	return r;
+}
+
 Vector operator+(Vector a,Vector b)
 {
 	Vector c;
