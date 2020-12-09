@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <cstdarg>
 
+Vector::Vector(const Vector &a)
+{
+	length = a.length;
+	x = (float*)malloc(sizeof(float)*(length));
+	for (int i = 0;i<length;i++) x[i] = a.x[i];
+}
+
 Vector::Vector(int l,...)
 {
 	init(l);

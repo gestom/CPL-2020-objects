@@ -2,6 +2,7 @@ class Vector
 {
 	public:
 		Vector(int l, ...);
+		Vector(const Vector &a);
 		~Vector();
 		int length;
 		float *x;
