@@ -1,13 +1,11 @@
 #include "Vector.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <cstdarg>
+#include <stdio.h>
 
 Vector::Vector(const Vector &a)
 {
-	length = a.length;
-	x = (float*)malloc(sizeof(float)*(length));
-	for (int i = 0;i<length;i++) x[i] = a.x[i];
+	init(a.length);
+	for (int i = 0; i < length; i++) x[i] = a.x[i]; 
 }
 
 Vector::Vector(int l,...)
@@ -27,27 +25,40 @@ Vector::~Vector()
 void Vector::init(int l)
 {
 	length = l;
-	x = (float*)malloc(sizeof(float)*(length));
+	x = (float*) malloc(sizeof(float)*length);
+}
+		
+void Vector::set(int i,float ix)
+{
+	if (i >= 0 && i<length) x[i] = ix;
 }
 
-void Vector::print()
+float Vector::get(int i)
 {
-	for (int i = 0;i<length;i++)printf("%.3f ",x[i]);
-	printf("\n");
+ 	if (i >= 0 && i<length) return x[i];
+	return 0;
+}
+
+int Vector::getLength()
+{
+	return length;
 }
 
 Vector operator+(Vector a,Vector b)
 {
-	Vector c(a.length);
-	for (int i = 0;i<a.length;i++)
-	{
-		c.x[i] = a.x[i] + b.x[i];   
-	}
+	Vector c(a.getLength());
+	for (int i = 0;i<a.getLength();i++) c.set(i,a.get(i) + b.get(i)); 
 	return c;
 }
 
-void Vector::operator++(int)
+void Vector::print()
 {
-	for (int i = 0;i<length;i++)x[i]++;
+	for (int i = 0;i<length;i++) printf("%.3f ",x[i]);
+	printf("\n");
+}
+
+void Vector::operator++()
+{
+	for (int i = 0;i<length;i++) x[i]++;
 }
 

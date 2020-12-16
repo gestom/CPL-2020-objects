@@ -1,15 +1,20 @@
+#include <stdlib.h>
+
 class Vector
 {
 	public:
-		Vector(int l, ...);
+		Vector(int l,...);
 		Vector(const Vector &a);
 		~Vector();
-		int length;
-		float *x;
+		void set(int i,float x);
+		float get(int i);
+		int getLength();
+		void operator++();
+
 		void print();
-		void operator++(int);
-	private:
-		void init(int length);
+		float *x;
+		int length;
+		void init(int l);
 };
 
-		Vector operator+(const Vector a,const Vector b);
+Vector operator+(Vector a,Vector b);
