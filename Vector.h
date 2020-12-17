@@ -9,7 +9,7 @@ class Vector
 		void set(int i,float x);
 		float get(int i);
 		int getLength();
-		void operator++();
+		void operator++(int);
 
 		void print();
 		float *x;

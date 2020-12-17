@@ -57,7 +57,7 @@ void Vector::print()
 	printf("\n");
 }
 
-void Vector::operator++()
+void Vector::operator++(int)
 {
 	for (int i = 0;i<length;i++) x[i]++;
 }
