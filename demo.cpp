@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Vector.h"
+#include "Cylinder.h"
 
 int main()
 {
@@ -15,6 +15,7 @@ int main()
 		a.print();
 		b.print();
 		c.print();
+		printf("Object C is %.3f meters long.\n",c.getLength());
 	}catch (const char* msg){
 		printf("%s\n",msg);
 	}

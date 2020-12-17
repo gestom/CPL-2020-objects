@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <math.h>
 
 class Vector
 {
@@ -8,14 +9,14 @@ class Vector
 		~Vector();
 		void set(int i,float x);
 		float get(int i);
-		int getLength();
+		int getSize();
 		void operator++(int);
 		float& operator[](int i);
-	
+		float getLength();	
 		void print();
 	private:
 		float *x;
-		int length;
+		int size;
 		void init(int l);
 };
 
