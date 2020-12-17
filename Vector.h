@@ -12,12 +12,12 @@ class Vector
 		int getSize();
 		void operator++(int);
 		float& operator[](int i);
-		float getLength();	
+		virtual float getLength();	
 		void print();
+		Vector operator+(Vector a);
 	private:
 		float *x;
 		int size;
 		void init(int l);
 };
 
-Vector operator+(Vector a,Vector b);

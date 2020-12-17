@@ -1,23 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Vector.h"
+#include "Cylinder.h"
 
-int main()
+int main(int argc,const char *argv[])
 {
-	try{
-		Vector a(2,1,2);
-		Vector b(2,2,3);
-		Vector c = a + b;
-		c++;
-
-		a[0] = 0;
-
-		a.print();
-		b.print();
-		c.print();
-		printf("Object C is %.3f meters long.\n",c.getLength());
-	}catch (const char* msg){
-		printf("%s\n",msg);
+	Vector *x;
+	if (argv[1][0] == 'C'){
+		x = new Cylinder(atof(argv[2]),atof(argv[3]));
 	}
+	if (argv[1][0] == 'V'){
+		x = new Vector(2,atof(argv[2]),atof(argv[3]));
+	}
+	printf("Length of X is %.3f\n",x->getLength());
+
 	return 0;
 }

@@ -44,10 +44,10 @@ int Vector::getSize()
 	return size;
 }
 
-Vector operator+(Vector a,Vector b)
+Vector Vector::operator+(Vector a)
 {
 	Vector c(a.getSize());
-	for (int i = 0;i<a.getSize();i++) c.set(i,a.get(i) + b.get(i)); 
+	for (int i = 0;i<a.getSize();i++) c.set(i,a.get(i) + get(i)); 
 	return c;
 }
 
@@ -71,6 +71,6 @@ float& Vector::operator[](int i)
 float Vector::getLength()
 {
 	float a=0;
-	for (int i = 0;i<size;i++) a += x[i]*x[i];
+	for (int i = 0;i<size;i++)a += x[i]*x[i];
 	return sqrt(a);
 }
