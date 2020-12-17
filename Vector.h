@@ -14,7 +14,9 @@ class Vector
 		float& operator[](int i);
 		virtual float getLength();	
 		void print();
-		Vector operator+(Vector a);
+		virtual Vector operator+(Vector a);
+		void operator=(Vector a);
+
 	private:
 		float *x;
 		int size;

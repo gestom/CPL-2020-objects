@@ -47,7 +47,7 @@ int Vector::getSize()
 Vector Vector::operator+(Vector a)
 {
 	Vector c(a.getSize());
-	for (int i = 0;i<a.getSize();i++) c.set(i,a.get(i) + get(i)); 
+	for (int i = 0;i<a.getSize();i++) c.set(i,get(i) + a.get(i)); 
 	return c;
 }
 
@@ -73,4 +73,11 @@ float Vector::getLength()
 	float a=0;
 	for (int i = 0;i<size;i++)a += x[i]*x[i];
 	return sqrt(a);
+}
+
+void Vector::operator=(Vector a)
+{
+	free(x);
+	init(a.getSize());
+	for (int i = 0;i<size;i++) x[i] = a.get(i);
 }

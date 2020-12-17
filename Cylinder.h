@@ -1,4 +1,5 @@
 #include "Vector.h"
+#include <stdio.h> 
 
 class Cylinder:public Vector
 {
@@ -6,4 +7,5 @@ class Cylinder:public Vector
 		Cylinder(float diameter,float length);
 		~Cylinder();
 		float getLength();
+		Vector operator+(Vector a);
 };
