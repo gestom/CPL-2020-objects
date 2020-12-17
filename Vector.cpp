@@ -30,7 +30,7 @@ void Vector::init(int l)
 		
 void Vector::set(int i,float ix)
 {
-	if (i >= 0 && i<length) x[i] = ix;
+	if (i >= 0 && i<length) x[i] = ix; else throw "Out of bounds";
 }
 
 float Vector::get(int i)
@@ -60,5 +60,11 @@ void Vector::print()
 void Vector::operator++(int)
 {
 	for (int i = 0;i<length;i++) x[i]++;
+}
+
+float& Vector::operator[](int i)
+{
+	if (i < 0 || i>=length) throw "Out of bounds";
+	return x[i];
 }
 

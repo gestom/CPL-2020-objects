@@ -10,8 +10,10 @@ class Vector
 		float get(int i);
 		int getLength();
 		void operator++(int);
-
+		float& operator[](int i);
+	
 		void print();
+	private:
 		float *x;
 		int length;
 		void init(int l);
